@@ -1,43 +1,74 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Venkat - Mythu ❤️</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'>
-  <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Valentine’s Day is coming 💘</title>
+
+  <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<div class="paper heart">
-</div>
-<div class="paper image">
+  <!-- Background Music -->
+  <!-- Autoplay must be muted first (browser rule) -->
+  <audio id="bg-music" autoplay loop muted>
+    <source src="./music/song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="paper heart"></div>
+
+  <div class="paper image">
     <p>Happy Valentine’s Day 💖</p>
-   <img src="./images/4.jpeg" />
-</div>
-<div class="paper image">
-  <p</p>
-  <img src="./images/6.jpeg" />
-</div>
-<div class="paper image">
-    <p>My dearest Mythily</p>
-    <img src="./images/5.jpeg" />
+    <img src="./images/4.jpeg">
   </div>
-  
+
+  <div class="paper image">
+    <img src="./images/6.jpeg">
+  </div>
+
+  <div class="paper image">
+    <p>My Dearest Mythily 💕</p>
+    <img src="./images/5.jpeg">
+  </div>
+
   <div class="paper red">
-    <p class="p1">My Forever Valentine 💖</p>
-    <p class="p2">My Heart Belongs to You, Mythily 😘</p>
+    <p>My Forever Valentine 💖</p>
+    <p>My Heart Belongs to You 😘</p>
   </div>
-  
+
   <div class="paper">
-    <p class="p1">Every day with you is special</p>
-    <p class="p1">But today I celebrate our Love ❤️</p>
-    <p class="p1">Thank you for being my Wife,</p>
-    <p class="p1">Mythily, my endless happiness 💞</p>
+    <p>Every day with you is special ❤️</p>
+    <p>But today I celebrate our Love 💞</p>
+    <p>Thank you for being my Wife</p>
+    <p>Mythily, my endless happiness 💕</p>
   </div>
-  
-<div class="paper">
-<p class="p1">Drag the papers to move!</p>
-</div>
-  <script  src="./js/script.js"></script>
+
+  <div class="paper">
+    <p>Click anywhere to turn on the music 🎶 and then drag the papers</p>
+  </div>
+
+  <script>
+    window.addEventListener("load", function () {
+      const music = document.getElementById("bg-music");
+
+      // Autoplay muted (allowed by browser)
+      music.play().catch(() => {});
+    });
+
+    // First click → unmute
+    document.addEventListener("click", function () {
+      const music = document.getElementById("bg-music");
+      music.muted = false;
+      music.play();
+    }, { once: true });
+  </script>
+
+  <script src="./js/script.js"></script>
+
 </body>
 </html>
